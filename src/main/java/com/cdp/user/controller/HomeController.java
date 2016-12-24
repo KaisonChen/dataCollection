@@ -17,13 +17,12 @@ public class HomeController {
 
 
     @RequestMapping("/index")
-    @ResponseBody
     public String index(){
         //输出日志
         logger.info("the first jsp pages");
 
         //返回一个index.jsp
-        return "index";
+        return "index.jsp";
     }
 
 }
