@@ -5,5 +5,5 @@ package com.cdp.user.service;
  */
 public interface HomeService {
 
-
+    public String homeTest();
 }

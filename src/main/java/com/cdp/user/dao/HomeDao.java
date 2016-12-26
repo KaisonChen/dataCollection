@@ -5,5 +5,6 @@ package com.cdp.user.dao;
  */
 public interface HomeDao {
 
+    public String homeTest();
 
 }
