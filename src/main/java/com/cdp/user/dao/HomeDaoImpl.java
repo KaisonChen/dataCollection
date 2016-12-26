@@ -23,6 +23,7 @@ public class HomeDaoImpl implements HomeDao{
 
         SqlRowSet rs = jdbcTemplate.queryForRowSet(sql);
 
+
         while(rs.next()){
             System.out.println("================"+rs.getString(2));
         }
