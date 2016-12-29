@@ -18,10 +18,10 @@
     </context:component-scan>
 
     <!--HandlerMapping 无需配置，springmvc可以默认启动-->
-
+ß
     <!--静态资源映射-->
 
-    <mvc:resources mapping="/**" location="/**"/>
+    <mvc:resources location="/**" mapping="/**" ></mvc:resources>
 
     <!-- 配置注解驱动 可以将request参数与绑定到controller参数上 -->
     <mvc:annotation-driven/>
@@ -30,12 +30,13 @@
     <!-- 默认的视图解析器 在上边的解析错误时使用 (默认使用html)- -->
     <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/view/"/><!--设置JSP文件的目录位置-->
+        <property name="prefix" value="/"/><!--设置JSP文件的目录位置-->
         <property name="suffix" value=".jsp"/>
     </bean>
 
     <!-- springmvc文件上传需要配置的节点-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="uploadTempDir" value = "/upload"></property>
         <property name="maxUploadSize" value="20971500"/>
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="resolveLazily" value="true"/>

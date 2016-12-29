@@ -1,0 +1,30 @@
+/* CSS Document */
+@charset "utf-8";
+*{margin:0; padding:0px;}
+body{font-size:14px;font-family:"微软雅黑";background:#E3E3E5 url(../images/bg.jpg)  0% top scroll no-repeat;background-size: 100% 100%;color:#5d5d5d;}
+a{text-decoration:none;}
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+li{list-style:none;}
+img{display:block;border:0px;}
+/*end*/
+
+a{-webkit-transition: background-color .25s ease-in-out,color .25s ease-in-out;
+    -moz-transition: background-color .25s ease-in-out,color .25s ease-in-out;
+    -ms-transition: background-color .25s ease-in-out,color .25s ease-in-out;
+    -o-transition: background-color .25s ease-in-out,color .25s ease-in-out;
+    transition: background-color .25s ease-in-out,color .25s ease-in-out; color: #666;}
+/* nav */
+.topbar{height:30px;min-height:30px;background-color:#f9f9f9;}
+.bb1{border-bottom: 1px solid #ddd;}
+.navbar-nav { float: left; margin: 0; }
+.navbar-nav > li { float: left; }
+.navbar-nav > li > a { padding: 15px; width: 120px;text-align: center;}
+.navbar-default .navbar-nav > li > a{padding:10px 10px 11px; color:#f7f7f7; width:110px; text-align:center; font-size:1.2em;font-weight: bold;}
+.navbar-default .navbar-nav > li > a:hover,.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li.active > a{background:#ada8aa;color:#f7f7f7;}
+
+#nav-top-right ul li a{line-height: 30px;padding: 0 10px;}
+/*#nav-top-right ul li a:hover,#nav-top-right ul li a:focus{background-color:#f5f5f5;}*/
+/*nav end*/
+

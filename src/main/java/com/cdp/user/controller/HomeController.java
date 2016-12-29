@@ -20,7 +20,8 @@ public class HomeController {
     @Autowired
     private HomeService homeService;
 
-    @RequestMapping("/index")
+    @RequestMapping("/index.action")
+    @ResponseBody
     public String index(){
         //输出日志
         logger.info("the first jsp pages");
@@ -29,7 +30,7 @@ public class HomeController {
         homeService.homeTest();
 
         //返回一个index.jsp
-        return "index";
+        return "ssssss";
     }
 
 }
