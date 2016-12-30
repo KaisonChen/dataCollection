@@ -20,7 +20,7 @@ public class HomeController {
     @Autowired
     private HomeService homeService;
 
-    @RequestMapping("/index.action")
+    @RequestMapping("/index")
     @ResponseBody
     public String index(){
         //输出日志
