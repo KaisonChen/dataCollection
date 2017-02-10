@@ -1,7 +1,7 @@
 /* CSS Document */
 @charset "utf-8";
 *{margin:0; padding:0px;}
-body{font-size:14px;font-family:"微软雅黑";background:#E3E3E5 url(../images/bg.jpg)  0% top scroll no-repeat;background-size: 100% 100%;color:#5d5d5d;}
+body{font-size:14px;font-family:"微软雅黑";background:#E3E3E5 url(../images/bg.jpg);color:#5d5d5d;}
 .left{float:left;}
 .right{float:right;}
 .clear{clear:both;}

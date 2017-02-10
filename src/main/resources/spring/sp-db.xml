@@ -13,7 +13,7 @@
 	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/blog?characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;noAccessToProcedureBodies=true" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/myblog?characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;noAccessToProcedureBodies=true" />
 		<property name="user" value="root" />
 		<property name="password" value="root" />
 		<property name="acquireIncrement" value="5"/>

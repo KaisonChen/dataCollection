@@ -1,0 +1,156 @@
+.icon { background: url('../images/icons/sprites.png') no-repeat top left; display: inline-block; vertical-align: middle; margin-right: 3px;}
+
+/*.icon-mail-yidu{background: url(../images/icon-mail.png) no-repeat; width: 21px; height: 21px;margin-top:-2px;}*/
+/*.icon-mail-weidu{background: url(../images/icon-mail1.png) no-repeat; width: 21px; height: 21px;margin-top:-2px;}*/
+.icon-message-send { background-position: 0px 0px; width: 17px; height: 16px;  }
+.feature01 { background-position: -18px 0px; width: 127px; height: 47px;  }
+.feature02 { background-position: -146px 0px; width: 127px; height: 47px;  }
+.feature03 { background-position: -274px 0px; width: 127px; height: 47px;  }
+.feature04 { background-position: -402px 0px; width: 127px; height: 47px;  }
+.feature05 { background-position: -530px 0px; width: 127px; height: 47px;  }
+.feature06 { background-position: -658px 0px; width: 127px; height: 47px;  }
+.ICON_03 { background-position: -786px 0px; width: 59px; height: 59px;  }
+.ICON_05 { background-position: -846px 0px; width: 59px; height: 59px;  }
+.ICON_07 { background-position: -906px 0px; width: 59px; height: 59px;  }
+.ICON_09 { background-position: -966px 0px; width: 59px; height: 59px;  }
+.icon1_sm { background-position: -1026px 0px; width: 29px; height: 26px;  }
+.icon2_hy { background-position: -1056px 0px; width: 29px; height: 26px;  }
+.icon3_ht { background-position: -1086px 0px; width: 29px; height: 26px;  }
+.icon4_gl { background-position: -1116px 0px; width: 29px; height: 26px;  }
+.icon5_jf { background-position: -1146px 0px; width: 29px; height: 26px;  }
+.icon6_gzy { background-position: -1176px 0px; width: 29px; height: 26px;  }
+.icon-arrowS-white { background-position: -1206px 0px; width: 13px; height: 14px;  }
+.icon-badge-g { background-position: -1220px 0px; width: 24px; height: 28px;  }
+.icon-badgeL { background-position: -1245px 0px; width: 38px; height: 47px;  }
+.icon-badgeS-org { background-position: -1284px 0px; width: 18px; height: 23px;  }
+.icon-board-g { background-position: -1303px 0px; width: 24px; height: 26px;  }
+.icon-boll-g { background-position: -1328px 0px; width: 24px; height: 31px;  }
+.icon-books-org { background-position: -1353px 0px; width: 24px; height: 20px;  }
+.icon-cardS-org { background-position: -1378px 0px; width: 24px; height: 16px;  }
+.icon-cart-org { background-position: -1403px 0px; width: 14px; height: 14px;  }
+.icon-cartS-w { background-position: -1418px 0px; width: 26px; height: 24px;  }
+.icon-chatL-org { background-position: -1445px 0px; width: 38px; height: 32px;  }
+.icon-chat-org { background-position: -1484px 0px; width: 22px; height: 18px;  }
+.icon-chatS-white { background-position: -1507px 0px; width: 13px; height: 14px;  }
+.icon-checkL { background-position: -1521px 0px; width: 47px; height: 42px;  }
+.icon-check-w { background-position: -1569px 0px; width: 16px; height: 12px;  }
+.icon-clockS-g { background-position: -1586px 0px; width: 16px; height: 16px;  }
+.icon-clockS-org { background-position: -1603px 0px; width: 14px; height: 14px;  }
+.icon-cloud-w { background-position: -1618px 0px; width: 17px; height: 11px;  }
+.icon-code-org { background-position: -1636px 0px; width: 24px; height: 18px;  }
+.icon-creditS-org { background-position: -1661px 0px; width: 24px; height: 17px;  }
+.icon-dataS-grey { background-position: -1686px 0px; width: 14px; height: 13px;  }
+.icon-downloadS-g { background-position: -1701px 0px; width: 15px; height: 13px;  }
+.icon-downloadS-org { background-position: -1717px 0px; width: 22px; height: 20px;  }
+.icon-edit-w { background-position: -1740px 0px; width: 26px; height: 26px;  }
+.icon-envelope { background-position: -1767px 0px; width: 18px; height: 14px;  }
+.icon-globeS-org { background-position: -1786px 0px; width: 18px; height: 18px;  }
+.icon-hat-blue { background-position: -1805px 0px; width: 30px; height: 21px;  }
+.icon-hat-g { background-position: -1836px 0px; width: 30px; height: 21px;  }
+.icon-hat-g-active { background-position: -1867px 0px; width: 30px; height: 21px;  }
+.icon-hatL-w { background-position: -1898px 0px; width: 79px; height: 55px;  }
+.icon-hat-org { background-position: -1978px 0px; width: 38px; height: 26px;  }
+.icon-hatS-org { background-position: -2017px 0px; width: 22px; height: 15px;  }
+.icon-heartS-org { background-position: -2040px 0px; width: 19px; height: 17px;  }
+.icon-house-blue { background-position: -2060px 0px; width: 25px; height: 25px;  }
+.icon-house-g { background-position: -2086px 0px; width: 25px; height: 25px;  }
+.icon-house-g-active { background-position: -2112px 0px; width: 25px; height: 25px;  }
+.icon-houseS-grey { background-position: -2138px 0px; width: 14px; height: 14px;  }
+.icon-hrchS-blue { background-position: -2153px 0px; width: 19px; height: 22px;  }
+.icon-hrchS-org { background-position: -2173px 0px; width: 19px; height: 22px;  }
+.icon-jy-w { background-position: -2193px 0px; width: 26px; height: 16px;  }
+.icon-laba-org { background-position: -2220px 0px; width: 22px; height: 17px;  }
+.icon-list-org { background-position: -2243px 0px; width: 29px; height: 27px;  }
+.icon-location-org { background-position: -2273px 0px; width: 14px; height: 20px;  }
+.icon-money-g { background-position: -2288px 0px; width: 27px; height: 20px;  }
+.icon-money-g-active { background-position: -2316px 0px; width: 27px; height: 20px;  }
+.icon-moneyL-w { background-position: -2344px 0px; width: 53px; height: 39px;  }
+.icon-money-org { background-position: -2398px 0px; width: 32px; height: 24px;  }
+.icon-moneyS-g { background-position: -2431px 0px; width: 18px; height: 14px;  }
+.icon-moneyS-org { background-position: -2450px 0px; width: 19px; height: 14px;  }
+.icon-openbookS-org { background-position: -2470px 0px; width: 21px; height: 21px;  }
+.icon-paperS-org { background-position: -2492px 0px; width: 14px; height: 19px;  }
+.icon-penS-org { background-position: -2507px 0px; width: 17px; height: 15px;  }
+.icon-pig-g { background: url(../images/icons/sprite/icon-money-blue.png) no-repeat center; background-position: 0 0; }
+.icon-pig-g-active { background-position: -2551px 0px; width: 25px; height: 23px;  }
+.icon-pigL-white { background-position: -2577px 0px; width: 57px; height: 53px;  }
+.icon-pigS-org { background-position: -2635px 0px; width: 17px; height: 15px;  }
+.icon-pt-w { background-position: -2653px 0px; width: 21px; height: 19px;  }
+.icon-qq { background-position: -2675px 0px; width: 55px; height: 63px;  }
+.icon-ratingS-org { background-position: -2731px 0px; width: 19px; height: 18px;  }
+.icon-rg-w { background-position: -2751px 0px; width: 22px; height: 19px;  }
+.iconS-bottle { background-position: -2774px 0px; width: 16px; height: 16px;  }
+.iconS-car { background-position: -2791px 0px; width: 16px; height: 16px;  }
+.iconS-cloth { background-position: -2808px 0px; width: 16px; height: 16px;  }
+.icon-screenS-org { background-position: -2825px 0px; width: 23px; height: 20px;  }
+.icon-search-g { background-position: -2849px 0px; width: 18px; height: 18px;  }
+.icon-search-grey { background-position: -2868px 0px; width: 26px; height: 26px;  }
+.icon-search-org { background-position: -2895px 0px; width: 26px; height: 26px;  }
+.icon-search-w { background-position: -2922px 0px; width: 19px; height: 19px;  }
+.iconS-eqmt { background-position: -2942px 0px; width: 16px; height: 16px;  }
+.iconS-food { background-position: -2959px 0px; width: 16px; height: 16px;  }
+.iconS-hammer { background-position: -2976px 0px; width: 16px; height: 16px;  }
+.iconS-health { background-position: -2993px 0px; width: 16px; height: 16px;  }
+.iconS-light { background-position: -3010px 0px; width: 16px; height: 16px;  }
+.iconS-paper { background-position: -3027px 0px; width: 16px; height: 16px;  }
+.icon-starS { background-position: -3044px 0px; width: 13px; height: 13px;  }
+.icon-storeS-org { background-position: -3058px 0px; width: 18px; height: 17px;  }
+.icon-suitcase-g { background-position: -3077px 0px; width: 24px; height: 23px;  }
+.icon-suitcaseS-org { background-position: -3102px 0px; width: 23px; height: 21px;  }
+.iconS-wf { background-position: -3126px 0px; width: 16px; height: 16px;  }
+.icon-tagS-org { background-position: -3143px 0px; width: 17px; height: 16px;  }
+
+.icon-tech-blue { background-position: -3161px 0px; width: 23px; height: 26px;  }
+.icon-pig-blue { background:url(../images/icons/sprite/icon-pig-blue.png) no-repeat center; background-position: 0 0; width: 30px;height: 21px; }
+.icon-money-blue { background:url(../images/icons/sprite/icon-money-blue.png) no-repeat center; background-position: 0 0; width: 30px;height: 21px;}
+
+.icon-tech-g { background-position: -3185px 0px; width: 23px; height: 26px;  }
+.icon-tech-g-active { background-position: -3209px 0px; width: 23px; height: 26px;  }
+.icon-techL-org { background-position: -3233px 0px; width: 51px; height: 59px;  }
+.icon-techL-w { background-position: -3285px 0px; width: 51px; height: 58px;  }
+.icon-tech-org { background-position: -3337px 0px; width: 29px; height: 30px;  }
+.icon-techS-org { background-position: -3367px 0px; width: 18px; height: 20px;  }
+.icon-tech-w { background-position: -3386px 0px; width: 20px; height: 23px;  }
+.icon-uploadL-w { background-position: -3407px 0px; width: 48px; height: 55px;  }
+.icon-userL { background-position: -3456px 0px; width: 42px; height: 42px;  }
+.icon-user-org { background-position: -3499px 0px; width: 28px; height: 26px;  }
+.icon-userS-g { background-position: -3528px 0px; width: 17px; height: 17px;  }
+.icon-userS-grey { background-position: -3546px 0px; width: 13px; height: 13px;  }
+.icon-volume-w { background-position: -3560px 0px; width: 27px; height: 19px;  }
+.icon-zw-w { background-position: -3588px 0px; width: 21px; height: 22px;  }
+.service01 { background-position: -3610px 0px; width: 94px; height: 94px;  }
+.service02 { background-position: -3705px 0px; width: 94px; height: 94px;  }
+.service03 { background-position: -3800px 0px; width: 94px; height: 94px;  }
+.service04 { background-position: -3895px 0px; width: 94px; height: 94px;  }
+.social-message { background-position: -3990px 0px; width: 21px; height: 20px;  }
+.social-sina { background-position: -4012px 0px; width: 21px; height: 20px;  }
+.social-tencent { background-position: -4034px 0px; width: 21px; height: 20px;  }
+.startBtn { background-position: -4056px 0px; width: 84px; height: 82px;  }
+.startBtnS { background-position: -4141px 0px; width: 25px; height: 25px;  }
+.icon-checkBadge-blue { background-position: -4167px 0px; width: 15px; height: 15px;  }
+.icon-editS-blue { background-position: -4183px 0px; width: 13px; height: 13px;  }
+.icon-globeS-blue { background-position: -4197px 0px; width: 13px; height: 13px;  }
+.icon-tcS-blue { background-position: -4211px 0px; width: 11px; height: 12px;  }
+
+.arrow-down{background: url(../images/icons/arrow-down.png) no-repeat; width: 11px; height: 6px;}
+.icon-thumbS {background: url(../images/icons/icon-thumbS.png) no-repeat; width: 12px; height: 13px;}
+.icon-location-org{margin-top: -4px;}
+.icon-cloud-w, .icon-code-org, .icon-books-org, .icon-message-send, .icon-suitcaseS-org, .icon-editS-blue, .icon-checkBadge-blue, .icon-thumbS{margin-top: -3px;}
+.icon-envelope,.icon-paperS-org, .icon-downloadS-org, .icon-storeS-org, .icon-laba-org{margin-top: -2px;}
+
+.imgList-4 .col-xs-6{padding: 10px; text-align: center;}
+
+.logo{background-image: none;}
+.active .icon-tech-g, li:hover .icon-tech-g{background: url(../images/icons/sprite/icon-tech-g-active.png) no-repeat center; background-position: 0 0;}
+.active .icon-money-g, li:hover .icon-money-g{background: url(../images/icons/sprite/icon-money-blue.png) no-repeat center; background-position: 0 0;}
+.active .icon-hat-g, li:hover .icon-hat-g{background: url(../images/icons/sprite/icon-hat-g-active.png) no-repeat center; background-position: 0 0;}
+.active .icon-pig-g, li:hover .icon-pig-g{background: url(../images/icons/sprite/icon-pig-blue.png) no-repeat center; background-position: 0 0;}
+.active .icon-house-g, li:hover .icon-house-g{background: url(../images/icons/sprite/icon-house-g-active.png) no-repeat center; background-position: 0 0;}
+
+
+
+
+
+
+
+

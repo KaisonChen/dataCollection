@@ -6,7 +6,7 @@
          version="3.0">
   <!--welcome pages-->
   <welcome-file-list>
-    <welcome-file>blog/index.jsp</welcome-file>
+    <welcome-file>com/index.jsp</welcome-file>
   </welcome-file-list>
   <context-param>
     <param-name>log4jConfigLocation</param-name>
@@ -53,6 +53,10 @@
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.jpg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.png</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
