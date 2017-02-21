@@ -48,7 +48,7 @@ public class BlogDaoImpl implements BlogDao {
 
         Blog blog = new Blog();
 
-        String sql = "select pla_blog_title,pla_blog_author,pla_blog_body,create_time from pla_blog where pla_blog_id = ?";
+        String sql = "select pla_blog_title,pla_user_nickname,pla_blog_body,pla_blog.create_time as create_time from pla_blog left join pla_user on pla_blog_author = pla_user_id where pla_blog_id = ?";
 
         Object[] param = new Object[]{blogId};
         SqlRowSet rs = jdbcTemplate.queryForRowSet(sql, param);
@@ -57,7 +57,7 @@ public class BlogDaoImpl implements BlogDao {
         if(rs.next()){
             blog.setTitle(rs.getString("pla_blog_title"));
             blog.setBody(rs.getString("pla_blog_body"));
-            blog.setAuthor(rs.getString("pla_blog_author"));
+            blog.setAuthor(rs.getString("pla_user_nickname"));
             String date = sdf.format(rs.getDate("create_time"));
 
             blog.setCreate_time(date);

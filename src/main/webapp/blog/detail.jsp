@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Blog Detail</title>
     <script type="text/javascript" src="../js/bootstrap-paginator.js"></script>
 
 </head>
@@ -21,10 +21,10 @@
         <div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="../bloglist">博文精粹</a></li>
-                <li><a href="#">碎言碎语</a></li>
-                <li><a href="#">个人日记</a></li>
-                <li><a href="#">相册展示</a></li>
-                <li><a href="#">学无止境</a></li>
+                <%--<li><a href="#">碎言碎语</a></li>
+                <li><a href="#">个人日记</a></li>--%>
+                <li><a href="../blog/photos.jsp">相册展示</a></li>
+                <li><a href="../blog/plan.jsp">学无止境</a></li>
                 <li><a href="#">留言板</a></li>
             </ul>
         </div>
