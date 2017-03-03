@@ -1,6 +1,6 @@
 package com.cdp.blog.service;
 
-import com.cdp.common.model.Blog;
+import com.cdp.blog.model.PlaBlog;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface BlogService {
 
-    public List<Blog> getBlogList();
+    public List<PlaBlog> getBlogList();
 
-    public Blog getBlogDetail(int blogId);
+    public PlaBlog getBlogDetail(int blogId);
 }

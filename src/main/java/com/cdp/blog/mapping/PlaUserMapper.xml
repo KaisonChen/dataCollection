@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cdp.blog.dao.PlaUserMapper" >
+  <resultMap id="BaseResultMap" type="com.cdp.blog.model.PlaUser" >
+    <id column="pla_user_id" property="plaUserId" jdbcType="INTEGER" />
+    <result column="pla_user_nickname" property="plaUserNickname" jdbcType="VARCHAR" />
+    <result column="pla_user_pwd" property="plaUserPwd" jdbcType="VARCHAR" />
+    <result column="pla_user_grpid" property="plaUserGrpid" jdbcType="INTEGER" />
+    <result column="pla_user_lang" property="plaUserLang" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pla_user_id, pla_user_nickname, pla_user_pwd, pla_user_grpid, pla_user_lang, create_time, 
+    last_login_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from pla_user
+    where pla_user_id = #{plaUserId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from pla_user
+    where pla_user_id = #{plaUserId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cdp.blog.model.PlaUser" >
+    insert into pla_user (pla_user_id, pla_user_nickname, pla_user_pwd, 
+      pla_user_grpid, pla_user_lang, create_time, 
+      last_login_time)
+    values (#{plaUserId,jdbcType=INTEGER}, #{plaUserNickname,jdbcType=VARCHAR}, #{plaUserPwd,jdbcType=VARCHAR}, 
+      #{plaUserGrpid,jdbcType=INTEGER}, #{plaUserLang,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{lastLoginTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cdp.blog.model.PlaUser" >
+    insert into pla_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="plaUserId != null" >
+        pla_user_id,
+      </if>
+      <if test="plaUserNickname != null" >
+        pla_user_nickname,
+      </if>
+      <if test="plaUserPwd != null" >
+        pla_user_pwd,
+      </if>
+      <if test="plaUserGrpid != null" >
+        pla_user_grpid,
+      </if>
+      <if test="plaUserLang != null" >
+        pla_user_lang,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="plaUserId != null" >
+        #{plaUserId,jdbcType=INTEGER},
+      </if>
+      <if test="plaUserNickname != null" >
+        #{plaUserNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="plaUserPwd != null" >
+        #{plaUserPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="plaUserGrpid != null" >
+        #{plaUserGrpid,jdbcType=INTEGER},
+      </if>
+      <if test="plaUserLang != null" >
+        #{plaUserLang,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cdp.blog.model.PlaUser" >
+    update pla_user
+    <set >
+      <if test="plaUserNickname != null" >
+        pla_user_nickname = #{plaUserNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="plaUserPwd != null" >
+        pla_user_pwd = #{plaUserPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="plaUserGrpid != null" >
+        pla_user_grpid = #{plaUserGrpid,jdbcType=INTEGER},
+      </if>
+      <if test="plaUserLang != null" >
+        pla_user_lang = #{plaUserLang,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where pla_user_id = #{plaUserId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cdp.blog.model.PlaUser" >
+    update pla_user
+    set pla_user_nickname = #{plaUserNickname,jdbcType=VARCHAR},
+      pla_user_pwd = #{plaUserPwd,jdbcType=VARCHAR},
+      pla_user_grpid = #{plaUserGrpid,jdbcType=INTEGER},
+      pla_user_lang = #{plaUserLang,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP}
+    where pla_user_id = #{plaUserId,jdbcType=INTEGER}
+  </update>
+</mapper>

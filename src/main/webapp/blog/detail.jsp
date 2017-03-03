@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: xiaohu
@@ -55,12 +56,12 @@
 
                                             <div class="col-lg-12">
 
-                                                <h4 class="media-heading" style="text-align: center;">${blogdetail.title}</h4>
+                                                <h4 class="media-heading" style="text-align: center;">${blogdetail.plaBlogTitle}</h4>
                                                    <p class="text-grey">
-                                                       <span><strong>${blogdetail.author}</strong>&nbsp;&nbsp;&nbsp;</span>
-                                                       <span class="time">${blogdetail.create_time}</span>
+                                                       <span><strong>${blogdetail.plaBlogAuthor}</strong>&nbsp;&nbsp;&nbsp;</span>
+                                                       <span class="time"><fmt:formatDate value="${blogdetail.createTime}" pattern="yyyy-MM-dd HH:mm"/></span>
                                                    </p>
-                                                    <pre style="white-space: pre-wrap;word-wrap: break-word;margin-top: -10px;">${blogdetail.body}
+                                                    <pre style="white-space: pre-wrap;word-wrap: break-word;margin-top: -10px;">${blogdetail.plaBlogBody}
                                                     </pre>
                                             </div>
                                         </div>

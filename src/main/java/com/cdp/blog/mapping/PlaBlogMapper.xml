@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cdp.blog.dao.PlaBlogMapper" >
+  <resultMap id="BaseResultMap" type="com.cdp.blog.model.PlaBlog" >
+    <id column="pla_blog_id" property="plaBlogId" jdbcType="INTEGER" />
+    <result column="pla_blog_title" property="plaBlogTitle" jdbcType="VARCHAR" />
+    <result column="pla_blog_author" property="plaBlogAuthor" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="upd_time" property="updTime" jdbcType="TIMESTAMP" />
+    <result column="pla_blog_body" property="plaBlogBody" jdbcType="BLOB"></result>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.cdp.blog.model.PlaBlog" extends="BaseResultMap" >
+    <result column="pla_blog_body" property="plaBlogBody" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pla_blog_id, pla_blog_title, pla_blog.create_time, upd_time, pla_blog_body
+  </sql>
+  <sql id="Blob_Column_List" >
+    pla_blog_body
+  </sql>
+  <sql id="Author_Column">
+    pla_user_nickname AS pla_blog_author
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Author_Column" />
+    from pla_blog
+    LEFT JOIN pla_user ON  pla_blog_author = pla_user_id
+    where pla_blog_id = #{plaBlogId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from pla_blog
+    where pla_blog_id = #{plaBlogId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cdp.blog.model.PlaBlog" >
+    insert into pla_blog (pla_blog_id, pla_blog_title, pla_blog_author, 
+      create_time, upd_time, pla_blog_body
+      )
+    values (#{plaBlogId,jdbcType=INTEGER}, #{plaBlogTitle,jdbcType=VARCHAR}, #{plaBlogAuthor,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updTime,jdbcType=TIMESTAMP}, #{plaBlogBody,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cdp.blog.model.PlaBlog" >
+    insert into pla_blog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="plaBlogId != null" >
+        pla_blog_id,
+      </if>
+      <if test="plaBlogTitle != null" >
+        pla_blog_title,
+      </if>
+      <if test="plaBlogAuthor != null" >
+        pla_blog_author,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updTime != null" >
+        upd_time,
+      </if>
+      <if test="plaBlogBody != null" >
+        pla_blog_body,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="plaBlogId != null" >
+        #{plaBlogId,jdbcType=INTEGER},
+      </if>
+      <if test="plaBlogTitle != null" >
+        #{plaBlogTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="plaBlogAuthor != null" >
+        #{plaBlogAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updTime != null" >
+        #{updTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="plaBlogBody != null" >
+        #{plaBlogBody,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cdp.blog.model.PlaBlog" >
+    update pla_blog
+    <set >
+      <if test="plaBlogTitle != null" >
+        pla_blog_title = #{plaBlogTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="plaBlogAuthor != null" >
+        pla_blog_author = #{plaBlogAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updTime != null" >
+        upd_time = #{updTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="plaBlogBody != null" >
+        pla_blog_body = #{plaBlogBody,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where pla_blog_id = #{plaBlogId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cdp.blog.model.PlaBlog" >
+    update pla_blog
+    set pla_blog_title = #{plaBlogTitle,jdbcType=VARCHAR},
+      pla_blog_author = #{plaBlogAuthor,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      upd_time = #{updTime,jdbcType=TIMESTAMP},
+      pla_blog_body = #{plaBlogBody,jdbcType=LONGVARCHAR}
+    where pla_blog_id = #{plaBlogId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cdp.blog.model.PlaBlog" >
+    update pla_blog
+    set pla_blog_title = #{plaBlogTitle,jdbcType=VARCHAR},
+      pla_blog_author = #{plaBlogAuthor,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      upd_time = #{updTime,jdbcType=TIMESTAMP}
+    where pla_blog_id = #{plaBlogId,jdbcType=INTEGER}
+  </update>
+
+  <select id="getBlogList" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"></include>
+    FROM pla_blog
+  </select>
+</mapper>

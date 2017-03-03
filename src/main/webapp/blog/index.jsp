@@ -62,10 +62,10 @@
                                                         </div>
                                                     </div>--%>
                                                 <div class="col-lg-12">
-                                                    <h4>${blog.title}</h4>
-                                                    <a href="../blog-detail?blogId=${blog.id}">
+                                                    <a href="../blog-detail?blogId=${blog.plaBlogId}">
+                                                        <h4>${blog.plaBlogTitle}</h4>
                                                         <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-                                                            ${blog.body}
+                                                            ${blog.plaBlogBody}
                                                         </p>
                                                     </a>
                                                 </div>

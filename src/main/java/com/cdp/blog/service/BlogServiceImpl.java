@@ -1,8 +1,8 @@
 package com.cdp.blog.service;
 
-import com.cdp.blog.dao.BlogDao;
+import com.cdp.blog.dao.PlaBlogMapper;
+import com.cdp.blog.model.PlaBlog;
 import com.cdp.common.model.Blog;
-import com.cdp.common.model.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,31 +12,42 @@ import java.util.List;
 /**
  * Created by xiaohu on 2017/1/3.
  */
-@Service("BlogService")
+@Service("blogService")
 public class BlogServiceImpl implements BlogService{
 
+    private PlaBlogMapper plaBlogMapper;
+
+    public PlaBlogMapper getPlaBlogMapper() {
+        return plaBlogMapper;
+    }
+
     @Autowired
-    private BlogDao blogDao;
+    public void setPlaBlogMapper(PlaBlogMapper plaBlogMapper) {
+        this.plaBlogMapper = plaBlogMapper;
+    }
 
     @Override
-    public List<Blog> getBlogList() {
+    public List<PlaBlog> getBlogList() {
 
-        List<Blog> list = new ArrayList<Blog>();
+        List<PlaBlog> list = new ArrayList<PlaBlog>();
 
-        list = blogDao.getBlogList();
+//        list.add(plaBlogMapper.selectByPrimaryKey(1));
+
+        list = plaBlogMapper.getBlogList();
 
         return list;
     }
 
     @Override
-    public Blog getBlogDetail(int blogId) {
+    public PlaBlog getBlogDetail(int blogId) {
 
-        Blog blog = new Blog();
+        PlaBlog blog = new PlaBlog();
 
-        blog = blogDao.getBlogDetail(blogId);
+        blog = plaBlogMapper.selectByPrimaryKey(blogId);
 
         return blog;
     }
+
 
 
 }

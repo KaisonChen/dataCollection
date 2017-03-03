@@ -3,9 +3,7 @@ package com.cdp.user.controller;
 import com.cdp.common.model.Blog;
 import com.cdp.common.util.CaptchaUtil;
 import com.cdp.user.service.HomeService;
-import com.sun.javafx.sg.PGShape;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +25,7 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    private  static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+    private  static final Logger logger = Logger.getLogger(HomeController.class);
 
     @Autowired
     private HomeService homeService;
