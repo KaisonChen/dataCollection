@@ -24,14 +24,14 @@
                 <div class="p_org_list">
                     <ul class="list-unstyled list-group  mbn text-center fontM">
                         <li class="list-group-item"><a href="#">&nbsp;</a></li>
-                        <li class="list-group-item"><a href="#">我的基本信息</a></li>
+                        <li class="list-group-item"><a href="../user/userInfo.jsp">我的基本信息</a></li>
                         <li class="list-group-item active"><a href="../userBlogList">我的文章</a></li>
                         <li class="list-group-item"><a href="#">我的碎言碎语</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-xs-10">
-                <div class="panel01">
+                <div class="">
                     <div class="t_companyInfor" style="margin-bottom:0px;">
                         <span class="t_information">我的文章</span>
                         <button class="t_edit R orangebg" style="float:right;width: 69px;height: 27px" onclick="window.location = ''">

@@ -51,6 +51,7 @@ public class UserController {
         }
 
         modelAndView.addObject("message",str);
+        modelAndView.addObject("userInfo");
         modelAndView.setViewName("user/userInfo");
 
 
