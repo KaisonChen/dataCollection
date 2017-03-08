@@ -44,7 +44,7 @@
           <div class="container">
               <div class="row" id="loginDiv" style="width: 30%;margin-top:20%;text-align: center;">
                   <p style="color: red;">${message}</p>
-                  <form action="/login" onsubmit="return doVaild()">
+                  <form action="/doLogin" onsubmit="return doVaild()">
                       <div class="row">
                           <label class="col-xs-3 control-label">用户名</label>
                           <div class="col-xs-9">

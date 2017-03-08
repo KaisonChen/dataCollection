@@ -64,9 +64,9 @@
                                                                 <c:forEach items="${blogList}" var="blog" varStatus="varStatus">
 
                                                                     <tr <c:if test="${varStatus.index % 2 != 0}">style='background:#ECF6EE;'</c:if>>
-                                                                        <td>${blog.title}</td>
-                                                                        <td>${blog.create_time}</td>
-                                                                        <td>${blog.upd_time}</td>
+                                                                        <td>${blog.plaBlogTitle}</td>
+                                                                        <td>${blog.createTime}</td>
+                                                                        <td>${blog.updTime}</td>
                                                                         <td><a>修改</a>/<a>删除</a></td>
                                                                     </tr>
                                                                 </c:forEach>

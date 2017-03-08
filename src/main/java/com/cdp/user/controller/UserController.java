@@ -1,9 +1,8 @@
 package com.cdp.user.controller;
 
-import com.cdp.common.model.Blog;
+import com.cdp.blog.model.PlaBlog;
 import com.cdp.common.util.CaptchaUtil;
-import com.cdp.user.service.HomeService;
-import org.apache.log4j.Logger;
+import com.cdp.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,40 +18,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by xiaohu on 2016/12/23.
+ * Created by xiaohu on 2017/3/8.
  */
-
 @Controller
-public class HomeController {
+public class UserController {
 
-    private  static final Logger logger = Logger.getLogger(HomeController.class);
 
     @Autowired
-    private HomeService homeService;
+    private UserService userService;
 
-    @RequestMapping("/index")
-    public String index(){
-        //输出日志
-        logger.info("the first jsp pages");
-
-        System.out.println("controller");
-        homeService.homeTest();
-
-        //返回一个index.jsp
-        return "com/header";
-    }
-
-    @RequestMapping("captcha")
-    @ResponseBody
-    public void captcha(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-            CaptchaUtil.outputCaptcha(request, response);
-    }
-
-    @RequestMapping("/login")
+    @RequestMapping("/doLogin")
     public ModelAndView doLogin(HttpServletRequest request, HttpServletResponse response,
-                                @RequestParam  String user_name,@RequestParam String user_pwd,@RequestParam String captcha){
+                                @RequestParam  String user_name, @RequestParam String user_pwd, @RequestParam String captcha){
+
         ModelAndView modelAndView = new ModelAndView();
 
         //session中的验证码
@@ -64,7 +42,7 @@ public class HomeController {
             return modelAndView;
         }
 
-        String str = homeService.doLogin(request, response);
+        String str = userService.doLogin(request, response);
 
         if(str.length() > 0){
             modelAndView.addObject("message", str);
@@ -77,29 +55,15 @@ public class HomeController {
 
 
         return modelAndView;
-
-    }
-
-    @RequestMapping("/logout")
-    public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
-
-        ModelAndView modelAndView = new ModelAndView();
-
-        request.getSession().removeAttribute("userinfo");
-
-        modelAndView.setViewName("/com/index");
-
-        return modelAndView;
     }
 
     @RequestMapping("/userBlogList")
-    @ResponseBody
     public ModelAndView gerUserBlogList(HttpServletRequest request, HttpServletResponse response){
 
         ModelAndView modelAndView = new ModelAndView();
 
-        List<Blog> list = new ArrayList<Blog>();
-        list = homeService.getUserBlogList(request, response);
+        List<PlaBlog> list = new ArrayList<PlaBlog>();
+        list = userService.getUserBlogList(request, response);
 
         modelAndView.setViewName("user/userBlog");
         modelAndView.addObject("blogList",list);
@@ -108,4 +72,11 @@ public class HomeController {
 
     }
 
+    @RequestMapping("captcha")
+    @ResponseBody
+    public void captcha(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        CaptchaUtil.outputCaptcha(request, response);
+    }
 }

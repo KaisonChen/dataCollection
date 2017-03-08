@@ -1,20 +1,18 @@
 package com.cdp.user.dao;
 
-import com.cdp.common.model.Blog;
-import com.cdp.common.model.UserInfo;
+import com.cdp.blog.model.PlaBlog;
+import com.cdp.blog.model.PlaUser;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by xiaohu on 2016/12/24.
+ * Created by xiaohu on 2017/3/8.
  */
-public interface HomeDao {
-
-    public String homeTest();
+public interface UserDao {
 
     public String doLogin(HttpServletRequest request, HttpServletResponse response);
 
-    public List<Blog> getUserBlogList(UserInfo userInfo);
+    public List<PlaBlog> getUserBlogList(PlaUser plaUser);
 }

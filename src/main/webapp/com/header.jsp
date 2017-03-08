@@ -7,11 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="com.cdp.common.model.UserInfo" %>
+<%@ page import="com.cdp.blog.model.PlaUser" %>
 <%
-    UserInfo userInfo = (UserInfo) session.getAttribute("userinfo");
+    PlaUser userInfo = (PlaUser) session.getAttribute("userinfo");
     if(userInfo == null){
-        userInfo = new UserInfo();
+        userInfo = new PlaUser();
     }
 %>
 <html>
@@ -58,7 +58,7 @@
     setInterval("document.getElementById('cur_time').innerHTML = new Date().toLocaleString()",1000);
 
     $().ready(function(){
-        var user_name = "<%=userInfo.getUsername() == null ? "" : userInfo.getUsername() %>";
+        var user_name = "<%=userInfo.getPlaUserNickname() == null ? "" : userInfo.getPlaUserNickname() %>";
         if(user_name != null && user_name != ""){
             $("#loginf").hide();
             $("#logint").show();

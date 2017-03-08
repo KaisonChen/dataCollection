@@ -1,19 +1,18 @@
 package com.cdp.user.service;
 
-import com.cdp.common.model.Blog;
+import com.cdp.blog.model.PlaBlog;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by xiaohu on 2016/12/24.
+ * Created by xiaohu on 2017/3/8.
  */
-public interface HomeService {
-
-    public String homeTest();
+public interface UserService {
 
     public String doLogin(HttpServletRequest request, HttpServletResponse response);
 
-    public List<Blog> getUserBlogList(HttpServletRequest request, HttpServletResponse response);
+    public List<PlaBlog> getUserBlogList(HttpServletRequest request, HttpServletResponse response);
 }
+

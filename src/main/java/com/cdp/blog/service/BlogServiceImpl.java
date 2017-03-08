@@ -2,7 +2,6 @@ package com.cdp.blog.service;
 
 import com.cdp.blog.dao.PlaBlogMapper;
 import com.cdp.blog.model.PlaBlog;
-import com.cdp.common.model.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

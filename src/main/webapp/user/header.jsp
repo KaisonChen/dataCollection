@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.cdp.blog.model.PlaUser" %><%--
   Created by IntelliJ IDEA.
   User: xiaohu
   Date: 2017/1/12
@@ -6,11 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.cdp.common.model.UserInfo" %>
 <%
-    UserInfo userInfo = (UserInfo) session.getAttribute("userinfo");
-    if(userInfo == null){
-        userInfo = new UserInfo();
+    PlaUser plaUser = (PlaUser) session.getAttribute("userinfo");
+    if(plaUser == null){
+        plaUser = new PlaUser();
     }
 %>
 <html>
@@ -57,7 +56,7 @@
     setInterval("document.getElementById('cur_time').innerHTML = new Date().toLocaleString()",1000);
 
     $().ready(function(){
-        var user_name = "<%=userInfo.getUsername() == null ? "" : userInfo.getUsername() %>";
+        var user_name = "<%=plaUser.getPlaUserNickname() == null ? "" : plaUser.getPlaUserNickname() %>";
         if(user_name != null && user_name != ""){
             $("#loginf").hide();
             $("#logint").show();
