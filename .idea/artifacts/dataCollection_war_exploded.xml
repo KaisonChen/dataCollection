@@ -29,7 +29,7 @@
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.2.2" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:3.0-alpha-1" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
-          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.1.26" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.24" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
         </element>
       </element>
