@@ -97,9 +97,9 @@
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updTime != null" >
-        upd_time = #{updTime,jdbcType=TIMESTAMP},
-      </if>
+
+        upd_time = NOW(),
+
       <if test="plaBlogBody != null" >
         pla_blog_body = #{plaBlogBody,jdbcType=LONGVARCHAR},
       </if>

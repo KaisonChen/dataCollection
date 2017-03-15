@@ -1,6 +1,7 @@
 package com.cdp.user.controller;
 
 import com.cdp.blog.model.PlaBlog;
+import com.cdp.blog.service.BlogService;
 import com.cdp.common.util.CaptchaUtil;
 import com.cdp.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private BlogService blogService;
 
     @RequestMapping("/doLogin")
     public ModelAndView doLogin(HttpServletRequest request, HttpServletResponse response,
@@ -79,5 +83,33 @@ public class UserController {
             throws ServletException, IOException {
 
         CaptchaUtil.outputCaptcha(request, response);
+    }
+
+    @RequestMapping(value = "userBlogInfo")
+    public ModelAndView getBlodDetial(@RequestParam int blogId){
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        PlaBlog blog = new PlaBlog();
+        blog = blogService.getBlogDetail(blogId);
+
+        modelAndView.setViewName("user/updBlog");
+        modelAndView.addObject("blogdetail",blog);
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "updateBlog")
+    public ModelAndView updBlog(HttpServletRequest request, HttpServletResponse response){
+        ModelAndView modelAndView = new ModelAndView();
+
+        PlaBlog plaBlog = new PlaBlog();
+        plaBlog.setPlaBlogId(Integer.parseInt(request.getParameter("plaBlogId")));
+        plaBlog.setPlaBlogTitle(request.getParameter("plaBlogTile"));
+        plaBlog.setPlaBlogBody(request.getParameter("plaBlogBody"));
+
+        blogService.updateByPrimaryKeySelective(plaBlog);
+        modelAndView.setViewName("redirect:/userBlogList");
+        return modelAndView;
     }
 }

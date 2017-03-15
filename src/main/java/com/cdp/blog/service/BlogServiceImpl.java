@@ -48,5 +48,10 @@ public class BlogServiceImpl implements BlogService{
     }
 
 
+    @Override
+    public void updateByPrimaryKeySelective(PlaBlog plaBlog){
+
+        plaBlogMapper.updateByPrimaryKeySelective(plaBlog);
+    }
 
 }

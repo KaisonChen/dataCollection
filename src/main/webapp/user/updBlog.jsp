@@ -54,7 +54,7 @@
                                                 <div style="text-align:center; margin-top:30px;">
                                                     <div class="favorites_list_div">
                                                         <div class="t_resource">
-                                                            <table class="table table-bordered  table-hover">
+                                                            <%--<table class="table table-bordered  table-hover">
                                                                 <thead class="t_thead">
                                                                 <tr class="info">
                                                                     <td>文章名称</td>
@@ -64,18 +64,35 @@
                                                                 </tr>
                                                                 <c:forEach items="${blogList}" var="blog" varStatus="varStatus">
 
-                                                                    <tr <c:if test="${varStatus.index % 2 != 0}">style='background:#ECF6EE;'</c:if>>
-                                                                        <td>${blog.plaBlogTitle}</td>
-                                                                        <td><fmt:formatDate value="${blog.createTime}" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate></td>
-                                                                        <td><fmt:formatDate value="${blog.updTime}" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate></td>
-                                                                        <td>
-                                                                            <a href="/userBlogInfo?blogId=${blog.plaBlogId}">修改</a>
-                                                                            /
-                                                                            <a href="/deleteBlog?blogId=${blog.plaBlogId}">删除</a></td>
+                                                                <tr <c:if test="${varStatus.index % 2 != 0}">style='background:#ECF6EE;'</c:if>>
+                                                                    <td>${blog.plaBlogTitle}</td>
+                                                                    <td><fmt:formatDate value="${blog.createTime}" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate></td>
+                                                                    <td><fmt:formatDate value="${blog.updTime}" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate></td>
+                                                                    <td>
+                                                                        <a href="/updateBlog?blogId=${blog.plaBlogId}">修改</a>
+                                                                        /
+                                                                        <a href="/deleteBlog?blogId=${blog.plaBlogId}>删除</a></td>
                                                                     </tr>
                                                                 </c:forEach>
                                                                 </thead>
-                                                            </table>
+                                                            </table>--%>
+                                                            <div class="col-xs-1"></div>
+                                                                <form action="/updateBlog" method="post">
+                                                                    <div class="col-xs-10">
+                                                                        <input type="hidden" name="plaBlogId" value="${blogdetail.plaBlogId}">
+                                                                        <div>
+                                                                            <button type="submit" class="btn-sm">保存</button>
+                                                                            <input type="text" style="width: 300px;" name ="plaBlogTile" value="${blogdetail.plaBlogTitle}">
+                                                                        </div>
+                                                                        <br>
+                                                                        <div style="height: auto;">
+                                                                            <textarea name="plaBlogBody"  style="width:100%;height:100%; overflow-x: auto; overflow-y: auto;">
+                                                                                ${blogdetail.plaBlogBody}
+                                                                            </textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            <div class="col-xs-1"></div>
                                                         </div>
                                                     </div>
                                                 </div>

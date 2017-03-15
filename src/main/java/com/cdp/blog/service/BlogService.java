@@ -12,4 +12,6 @@ public interface BlogService {
     public List<PlaBlog> getBlogList();
 
     public PlaBlog getBlogDetail(int blogId);
+
+    public void updateByPrimaryKeySelective(PlaBlog plaBlog);
 }
