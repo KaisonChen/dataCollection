@@ -5,25 +5,23 @@ import sun.misc.BASE64Encoder;
 
 import javax.crypto.*;
 import javax.crypto.spec.DESedeKeySpec;
-import java.io.*;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 
 /**
- * Created by xiaohu on 2017/3/13.
+ * Created by xiaohu on 2017/3/14.
  */
-public class License {
+public class CreateLicense {
 
     public static void main(String args[]){
 
 //        System.out.println(enpass("cdpgroupltd,shanghai,abcdefg1q2w3e43r@2019-12-31"));
 
-       //System.out.println(dePass("r/Ef0PsQVtnwdYoyTNoj+FmQi7XhmsPMGbo1Nd2snwCAD4i8MWzh7dgH0yRJAhEeb2cvVGdeA00="));
+        //System.out.println(dePass("r/Ef0PsQVtnwdYoyTNoj+FmQi7XhmsPMGbo1Nd2snwCAD4i8MWzh7dgH0yRJAhEeb2cvVGdeA00="));
 
 //        try {
 //            System.out.println(NetworkInfo.getMacAddress());
@@ -31,16 +29,15 @@ public class License {
 //            e.printStackTrace();
 //        }
 
-       //System.out.println(checkLicense());
+        System.out.println(new License().checkLicense());
 
     }
 
     //加密密码
-    public final  String enpass(String password){
+    public final static String enpass(String password){
 
         try {
             SecretKey key = readKey("4C-32-75-8A-D3-0B");
-            //SecretKey key = readKey("chang_30-85-A9-74-D9-3B_xiaohui");
             Cipher cip = Cipher.getInstance("DESede");
             cip.init(Cipher.ENCRYPT_MODE, key);
             byte[] cipBytes = cip.doFinal(password.getBytes());
@@ -66,7 +63,7 @@ public class License {
 
 
     //解密密码
-    public final  String dePass(String password){
+    public final static String dePass(String password){
 
         try {
             byte[] keyBuffer = new BASE64Decoder().decodeBuffer(password);
@@ -98,7 +95,7 @@ public class License {
     }
 
 
-    private  final SecretKey readKey(String keystr){
+    private  final static SecretKey readKey(String keystr){
 
         try {
             String skey = String.format("%s_%s_%s","chen",keystr,"xiaohu");
@@ -121,60 +118,5 @@ public class License {
         }
 
         return null;
-    }
-
-    public  String checkLicense()
-    {
-        try
-        {
-            File lisfile = null;
-            String skey = null;
-            ArrayList<String> netLst = NetworkInfo.getMacAddress();
-            for (int i = 0; i < netLst.size(); i++)
-            {
-                String sfilename = System.getProperty("user.dir") + "/" + String.format("lis_%s.txt", netLst.get(i));
-//                System.out.println(sfilename);
-                lisfile = new File(sfilename);
-                if (lisfile.exists())
-                {
-                    skey = netLst.get(i);
-                    break;
-                }
-                else
-                {
-                    lisfile = null;
-                }
-            }
-            if (lisfile == null)
-            {
-                throw new Exception("无法找到有效的授权文件!");
-            }
-            else
-            {
-                SecretKey key = readKey(skey);
-                InputStream is = new FileInputStream(lisfile);
-
-
-                byte[] keyBuffer = new BASE64Decoder().decodeBuffer(is);
-                Cipher cip = Cipher.getInstance("DESede");
-                cip.init(Cipher.DECRYPT_MODE, key);
-                String stmp = new String(cip.update(keyBuffer));
-                stmp = stmp + new String(cip.doFinal());
-                String[] sgrp = stmp.split("@");
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                Date d = sdf.parse(sgrp[1]);
-                if (d.before(new Date()))
-                {
-                    throw new Exception("授权有效期已过!");
-                }
-                return sgrp[1];
-            }
-        }
-        catch (Exception e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            return  "";
-        }
     }
 }

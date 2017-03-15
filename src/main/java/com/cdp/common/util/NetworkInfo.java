@@ -8,7 +8,7 @@ import java.util.Enumeration;
 /**
  * Created by xiaohu on 2017/3/13.
  */
-public final class NetworkInfo {
+public class NetworkInfo {
 
     public final static ArrayList<String> getMacAddress() throws Exception{
 
@@ -36,5 +36,14 @@ public final class NetworkInfo {
         }
 
         return netList;
+    }
+
+    public static void main(String args[]){
+        try {
+            System.out.println(getMacAddress());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
