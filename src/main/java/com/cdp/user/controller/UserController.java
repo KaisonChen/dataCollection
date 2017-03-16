@@ -85,6 +85,18 @@ public class UserController {
         CaptchaUtil.outputCaptcha(request, response);
     }
 
+    @RequestMapping("/logout")
+    public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        request.getSession().removeAttribute("userinfo");
+
+        modelAndView.setViewName("/com/index");
+
+        return modelAndView;
+    }
+
     @RequestMapping(value = "userBlogInfo")
     public ModelAndView getBlodDetial(@RequestParam int blogId){
 
