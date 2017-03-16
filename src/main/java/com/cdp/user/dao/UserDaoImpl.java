@@ -73,15 +73,22 @@ public class UserDaoImpl implements UserDao {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String date ="";
+        String temp ="";
         try {
             while (rs.next()){
                 PlaBlog blog = new PlaBlog();
                 blog.setPlaBlogId(rs.getInt("pla_blog_id"));
                 blog.setPlaBlogTitle(rs.getString("pla_blog_title"));
-                date = sdf.format(rs.getDate("create_time"));
-                blog.setCreateTime(sdf.parse(date));
-                date = sdf.format(rs.getDate("upd_time"));
-                blog.setUpdTime(sdf.parse(date));
+                temp = rs.getString("create_time");
+                if(temp != null && temp.length() > 0 ){
+                    date = sdf.format(rs.getDate("create_time"));
+                    blog.setCreateTime(sdf.parse(date));
+                }
+                temp = rs.getString("upd_time");
+                if(temp != null && temp.length() > 0 ){
+                    date = sdf.format(rs.getDate("upd_time"));
+                    blog.setUpdTime(sdf.parse(date));
+                }
 
                 list.add(blog);
             }
