@@ -35,7 +35,7 @@
         <div class="pull-right" data-position="bottom" id="nav-top-right">
 
             <ul class="nav navbar-nav">
-                <li id="loginf"><a href="../user/login.jsp">登录</a></li>
+                <%--<li id="loginf"><a href="../user/login.jsp">登录</a></li>--%>
                 <li id="" style="display: none;"><a id="logint"></a></li>
                 <li id="logout" style="display: none;"><a href="../logout">退出</a></li>
                 <%--<li><a>注册</a></li>--%>
