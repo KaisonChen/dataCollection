@@ -39,6 +39,7 @@ public class UserDaoImpl implements UserDao {
         SqlRowSet rs = jdbcTemplate.queryForRowSet(sql, param);
 
         PlaUser userInfo = new PlaUser();
+
         if(rs.next()){
             userInfo.setPlaUserNickname(user_name);
             userInfo.setPlaUserId(rs.getInt("pla_user_id"));
@@ -65,7 +66,7 @@ public class UserDaoImpl implements UserDao {
 
         int userid = plaUser.getPlaUserId();
 
-        String sql = "select pla_blog_id,pla_blog_title,create_time,upd_time from pla_blog where pla_blog_author = ?";
+        String sql = "select pla_blog_id,pla_blog_title,create_time,upd_time from pla_blog where pla_blog_author = ? ORDER BY create_time";
 
         Object[] param = new Object[]{userid};
 

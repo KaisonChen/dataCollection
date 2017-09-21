@@ -127,6 +127,6 @@
   <select id="getBlogList" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List"></include>
-    FROM pla_blog
+    FROM pla_blog order by create_time DESC
   </select>
 </mapper>
